@@ -7,17 +7,12 @@ namespace KJTGroup.EFCore
 
     {
         public DbSet<Customer> Customers { get; set; }
-
         public DbSet<Product> Products { get; set; }
-
         public DbSet<Order> Orders { get; set; }
-
-
-
+        public DbSet<Cargo> Cargos { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -40,6 +35,8 @@ namespace KJTGroup.EFCore
             modelBuilder.Entity<Product>()
                         .Property(w => w.Weight)
                         .HasColumnType("decimal(10, 4)");
+
+
 
         }
 
